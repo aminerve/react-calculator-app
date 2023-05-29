@@ -5,8 +5,8 @@ export default function Calculator() {
   return (
     <div className='calculator-grid'>
         <div className='output'>
-            <div className='previous-operand'></div>
-            <div className='current-operand'></div>
+            <div className='previous-operand'>123444</div>
+            <div className='current-operand'>123443</div>
         </div>
         <button className='span-two'>AC</button>
         <button>DEL</button>
