@@ -10,11 +10,19 @@ const ACTIONS = {
 }
 
 function reducer(state, {type, payload}) {
-    
+    switch(type){
+      case ACTIONS.ADD_DIGIT:
+        return {
+          ...state,
+          currentOperand: `${currentOperand || ""}${payload.digit}`
+        }
+    }
 }
 
 export default function Calculator() {
-    const [{currentOperand, previousOperand, operation}, dispatch] = useReducer(reducer)
+    const [{currentOperand, previousOperand, operation}, dispatch] = useReducer(reducer, {})
+
+    dispatch({type: ACTIONS.ADD_DIGIT, payload: {digits: 1}})
   return (
     <div className='calculator-grid'>
         <div className='output'>
