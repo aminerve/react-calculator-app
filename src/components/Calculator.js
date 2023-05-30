@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import '../styles/calculator.css'
 
+const ACTIONS = {
+  ADD_DIGIT: 'add-digit',
+  CHOOSE_OPERATION: 'choose-operation',
+  CLEAR: 'clear',
+  DEL_DIGIT: 'delete-digit',
+  EVALUATE: 'evaluate'
+}
+
+function reducer(state, {type, payload}) {
+    
+}
+
 export default function Calculator() {
+    const [{currentOperand, previousOperand, operation}, dispatch] = useReducer(reducer)
   return (
     <div className='calculator-grid'>
         <div className='output'>
-            <div className='previous-operand'>123444</div>
-            <div className='current-operand'>123443</div>
+            <div className='previous-operand'>{previousOperand} {operation}</div>
+            <div className='current-operand'>{currentOperand}</div>
         </div>
         <button className='span-two'>AC</button>
         <button>DEL</button>
